@@ -1,0 +1,18 @@
+<!-- templates/login_choice.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录选择</title>
+</head>
+<body>
+    <h1>请选择登录方式</h1>
+    <div>
+        <a href="{% url 'login' %}"><button>用户登录</button></a>
+    </div>
+    <div>
+        <a href="{% url 'staff_login' %}"><button>员工登录</button></a>
+    </div>
+
+</body>
+</html>

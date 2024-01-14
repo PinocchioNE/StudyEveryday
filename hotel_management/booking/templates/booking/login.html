@@ -1,0 +1,18 @@
+<!-- booking/login.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">登录</button>
+    </form>
+    <div>
+        <a href="{% url 'register' %}"><button>注册账号</button></a>
+    </div>
+</body>
+</html>

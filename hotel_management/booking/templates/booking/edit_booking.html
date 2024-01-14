@@ -1,0 +1,16 @@
+<!-- booking/templates/booking/edit_booking.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Booking</title>
+</head>
+<body>
+    <h2>Edit Booking</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Update Booking">
+    </form>
+</body>
+</html>

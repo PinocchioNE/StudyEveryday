@@ -1,0 +1,40 @@
+<!-- booking/templates/booking/book_room.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book a Room</title>
+</head>
+<body>
+    <h2>Book a Room</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.room.label_tag }} {{ form.room }}
+        {{ form.room.errors }}
+        {% if price %}
+            <p>Price: ${{ price }} per night</p>
+        {% endif %}
+        {{ form.start_date.label_tag }} {{ form.start_date }}
+        {{ form.start_date.errors }}
+        {{ form.end_date.label_tag }} {{ form.end_date }}
+        {{ form.end_date.errors }}
+        <button type="submit">Book</button>
+    </form>
+        <!-- 修改预定按钮 -->
+
+    <a href="{% url 'booking_list' %}">
+        <button type="button">修改预定</button>
+    </a>
+
+
+    <!-- 状况申报按钮 -->
+    <a href="{% url 'report_emergency' %}">
+        <button type="button">状况申报</button>
+    </a>
+
+    <!-- 酒店评价按钮 -->
+    <a href="{% url 'submit_review' %}">
+        <button type="button">酒店评价</button>
+    </a>
+</body>
+</html>

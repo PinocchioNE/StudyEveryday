@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Staff Cancel Booking</title>
+</head>
+<body>
+    <h2>Staff Cancel Booking</h2>
+    <form method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to cancel this booking?</p>
+        <input type="submit" value="Yes, cancel this booking">
+    </form>
+</body>
+</html>

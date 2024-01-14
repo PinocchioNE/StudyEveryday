@@ -1,0 +1,15 @@
+<!-- staff_register.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register as Staff</title>
+</head>
+<body>
+    <h2>Register as Staff</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>

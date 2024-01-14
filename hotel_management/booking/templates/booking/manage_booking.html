@@ -1,0 +1,22 @@
+<!-- booking/templates/booking/manage_booking.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Bookings</title>
+</head>
+<body>
+    <h2>Your Bookings</h2>
+    <ul>
+        {% for booking in bookings %}
+        <li>
+            Room: {{ booking.room }},
+            From: {{ booking.start_date }} To: {{ booking.end_date }}
+            [<a href="{% url 'edit_booking' booking.id %}">Edit</a>]
+        </li>
+        {% empty %}
+        <li>No bookings found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

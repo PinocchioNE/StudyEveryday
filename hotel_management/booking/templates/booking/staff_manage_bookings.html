@@ -1,0 +1,22 @@
+<!-- staff/manage_bookings.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>预约管理</title>
+</head>
+<body>
+    <h2>预约管理</h2>
+    <ul>
+        {% for booking in bookings %}
+        <li>
+            姓名：{{ booking.user.username }} - 身份证：{{ booking.user.id_card }} - 电话号码：{{ booking.user.phone_number }}
+            房间号码：{{ booking.room.room_number }} - 房间类型：{{ booking.room.get_room_type_display }} - 价格：{{ booking.room.price }} - 预订日期：{{ booking.start_date }} 至 {{ booking.end_date }}
+            <a href="{% url 'staff_cancel_booking' booking.id %}">取消</a>
+        </li>
+        {% empty %}
+        <li>没有找到预订记录。</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

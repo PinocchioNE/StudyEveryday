@@ -1,0 +1,20 @@
+<!-- staff/check_in.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>入住登记</title>
+</head>
+<body>
+    <h2>入住登记</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if price %}
+            <p>价格：￥{{ price }} 每晚</p>
+        {% endif %}
+
+        <button type="submit">登记</button>
+    </form>
+</body>
+</html>

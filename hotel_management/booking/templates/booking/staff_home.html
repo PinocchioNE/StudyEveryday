@@ -1,0 +1,23 @@
+<!-- templates/staff_home.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>员工主页</title>
+</head>
+<body>
+    <h1>员工主页</h1>
+    <div>
+        <a href="{% url 'user_list' %}"><button>用户信息</button></a>
+    </div>
+    <div>
+        <a href="{% url 'check_in' %}"><button>入住登记</button></a>
+    </div>
+    <div>
+        <a href="{% url 'staff_manage_bookings' %}"><button>取消预约</button></a>
+    </div>
+    <div>
+        <a href="{% url 'emergency_reports' %}"><button>状况申报</button></a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!-- booking/templates/booking/staff_login.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Staff Login</title>
+</head>
+<body>
+    <h2>Staff Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">登录</button>
+    </form>
+    <div>
+        <a href="{% url 'staff_register' %}"><button>注册账号</button></a>
+    </div>
+</body>
+</html>

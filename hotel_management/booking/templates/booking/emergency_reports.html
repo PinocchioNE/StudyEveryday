@@ -1,0 +1,37 @@
+<!-- staff/emergency_reports.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>状况申报管理</title>
+</head>
+<body>
+    <h1>状况申报管理</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>用户名</th>
+                <th>房间号</th>
+                <th>状况类型</th>
+                <th>描述</th>
+                <th>报告时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for emergency in emergencies %}
+            <tr>
+                <td>{{ emergency.user.username }}</td> <!-- 或者 {{ emergency.user.username }} -->
+                <td>{{ emergency.room_number }}</td>
+                <td>{{ emergency.get_emergency_type_display }}</td>
+                <td>{{ emergency.description }}</td>
+                <td>{{ emergency.reported_time }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">没有状况申报记录。</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

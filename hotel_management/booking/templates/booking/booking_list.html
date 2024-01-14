@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>您的预订</title>
+</head>
+<body>
+    <h2>您的预订</h2>
+    <ul>
+        {% for booking in bookings %}
+        <li>
+            房间号码：{{ booking.room.room_number }} - 房间类型：{{ booking.room.get_room_type_display }} - 价格：{{ booking.room.price }} - 预订日期：{{ booking.start_date }} 至 {{ booking.end_date }}
+            <a href="{% url 'edit_booking' booking.id %}">修改</a>
+            <a href="{% url 'cancel_booking' booking.id %}">取消</a>
+            <a href="{% url 'book_room'  %}">返回</a>
+        </li>
+        {% empty %}
+        <li>您没有预订。</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
